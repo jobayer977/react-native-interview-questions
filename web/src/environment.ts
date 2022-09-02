@@ -1,5 +1,5 @@
 export const environment = {
-	title: 'React Questions',
-	subTitle: 'React  Questions and Answers',
-	github: 'https://github.com/jobayer977/react-interview-questions'
+	title: 'React Native Questions',
+	subTitle: 'React Native  Questions and Answers',
+	github: 'https://github.com/jobayer977/react-native-interview-questions'
 };
