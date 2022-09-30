@@ -1,1 +1,1 @@
-https://reactnative.dev/docs/debugging
+https://reactnative.dev/docs/upgrading
