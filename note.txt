@@ -1,1 +1,1 @@
-https://reactnative.dev/docs/upgrading
+https://reactnative.dev/docs/native-modules-intro
