@@ -20,13 +20,15 @@
 - [14 What is the AndroidManifest XML?](#what-is-the-androidmanifest-xml)
 - [15 What is Fast Refresh](#what-is-fast-refresh)
 - [16 What is library linking in react native](#what-is-library-linking-in-react-native)
-- [17 What is cross-platform mobile app development?](#what-is-cross-platform-mobile-app-development)
-- [18 When to Consider Building a Cross-platform App?](#when-to-consider-building-a-cross-platform-app)
-- [19 What is React Native and why it is used?](#what-is-react-native-and-why-it-is-used)
-- [20 How react native works internally](#how-react-native-works-internally)
-- [21 What is React Native Threading Model ?](#what-is-react-native-threading-model)
-- [22 What does React Native use to allow JavaScript to be executed on iOS and Android natively?](#what-does-react-native-use-to-allow-javascript-to-be-executed-on-ios-and-android-natively)
-- [23 Does React Native use a WebView?](#does-react-native-use-a-webview)
+- [17 Why Test](#why-test)
+- [18 What is Hermes in react native](#what-is-hermes-in-react-native)
+- [19 What is cross-platform mobile app development?](#what-is-cross-platform-mobile-app-development)
+- [20 When to Consider Building a Cross-platform App?](#when-to-consider-building-a-cross-platform-app)
+- [21 What is React Native and why it is used?](#what-is-react-native-and-why-it-is-used)
+- [22 How react native works internally](#how-react-native-works-internally)
+- [23 What is React Native Threading Model ?](#what-is-react-native-threading-model)
+- [24 What does React Native use to allow JavaScript to be executed on iOS and Android natively?](#what-does-react-native-use-to-allow-javascript-to-be-executed-on-ios-and-android-natively)
+- [25 Does React Native use a WebView?](#does-react-native-use-a-webview)
 <br/><br/><br/><br/>
 
 1. ### What is a Hybrid App?
@@ -164,30 +166,37 @@ It works for example if we change the text in the App.js file from "Hello World"
 
 When a library has native module implementations. Then we have to link the library to the platform-specific native code. This is called library linking.  Linking can be done automatically or manually.
 
-17. ### What is cross-platform mobile app development?
+17. ### Why Test
+
+Testing is an important part of software development. It is a way to ensure that the code is working as expected. It is also a way to ensure that the code is not broken when new features are added or when existing features are modified.
+
+18. ### What is Hermes in react native
+
+Hermes is a JavaScript engine optimized for running React Native apps on Android. It improves app performance and decreases app size. Hermes is enabled by default in the latest version of React Native.
+19. ### What is cross-platform mobile app development?
 
 Cross platform framework operate to develop shareable and reusable code across multiple platforms. "Write once, run everywhere" is the motto of cross platform framework.
 Writing once and reuse the same on multiple platforms helps in minimizing the development time and cost and also ensure hassle-free implementation.
 **Note:** Cross-platform applications are popular in today’s times, all credits to React Native, Xamarin, and Flutter frameworks.
 
-18. ### When to Consider Building a Cross-platform App?
+20. ### When to Consider Building a Cross-platform App?
 
 - We have to release a mobile app for both Android and iOS in limited time ,resources and budget.
 - Need to target both Android and iOS platforms.
 - Need faster development.
 - The app isn’t complex and doesn’t need functionalities which vary much between the platforms.
 
-19. ### What is React Native and why it is used?
+21. ### What is React Native and why it is used?
 
 React Native is an open-source JavaScript framework, designed for building apps on multiple platforms like iOS, Android, and also web applications, utilizing the very same code base. It is based on React, and it brings all its glory to mobile app development.
 
-20. ### How react native works internally
+22. ### How react native works internally
 
 React Native allows developers to build apps by spinning up JS threads that interpret JavaScript code, by making a native bridge between the app and the target platform. The bridge concept leverages the library and transfers the component’s hierarchy to the mobile devices view.
 
 For instance, if the user presses a button, this case is translated into an event that JavaScript can handle. After that, by relaying messages between native platforms and JS code, the React Native bridges translates native events into something that React components can understand and work with.
 
-21. ### What is React Native Threading Model ?
+23. ### What is React Native Threading Model ?
 
 There are 3 main threads in React Native:
 
@@ -204,11 +213,11 @@ The Javascript Queue is the thread queue where the main bundled JS thread runs. 
 **Native Modules Thread**
 If an app needs access to platform API, this is where the magic happens.
 
-22. ### What does React Native use to allow JavaScript to be executed on iOS and Android natively?
+24. ### What does React Native use to allow JavaScript to be executed on iOS and Android natively?
 
 On iOS simulators and devices, Android emulators and devices React Native uses JavaScriptCore which is the JavaScript engine that powers Safari. Our bundle contains the JS code. And it runs on the JavaScriptCore engine. And communicates with the native code through a bridge.
 
-23. ### Does React Native use a WebView?
+25. ### Does React Native use a WebView?
 
 React Native uses a JavaScript runtime, but the UI is not HTML and it doesn't use a WebView. We use JSX and React Native-specific components to define the UI. It provides a native-level performance and looks and feels but some UI parts have to be configured separately for iOS and Android.
 
