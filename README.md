@@ -29,12 +29,16 @@
 - [23 What is cross-platform mobile app development?](#what-is-cross-platform-mobile-app-development)
 - [24 What is a bridge in React Native ?](#what-is-a-bridge-in-react-native)
 - [25 What is ListView in react-native?](#what-is-listview-in-react-native)
-- [26 When to Consider Building a Cross-platform App?](#when-to-consider-building-a-cross-platform-app)
-- [27 What is React Native and why it is used?](#what-is-react-native-and-why-it-is-used)
-- [28 How react native works internally](#how-react-native-works-internally)
-- [29 What is React Native Threading Model ?](#what-is-react-native-threading-model)
-- [30 What does React Native use to allow JavaScript to be executed on iOS and Android natively?](#what-does-react-native-use-to-allow-javascript-to-be-executed-on-ios-and-android-natively)
-- [31 Does React Native use a WebView?](#does-react-native-use-a-webview)
+- [26 What are Touchable components in react Native?](#what-are-touchable-components-in-react-native)
+- [27 What are the Different Ways to style React Native Application?](#what-are-the-different-ways-to-style-react-native-application)
+- [28 What are the disadvantages of React Native?](#what-are-the-disadvantages-of-react-native)
+- [29 what is deep linking in react native](#what-is-deep-linking-in-react-native)
+- [30 When to Consider Building a Cross-platform App?](#when-to-consider-building-a-cross-platform-app)
+- [31 What is React Native and why it is used?](#what-is-react-native-and-why-it-is-used)
+- [32 How react native works internally](#how-react-native-works-internally)
+- [33 What is React Native Threading Model ?](#what-is-react-native-threading-model)
+- [34 What does React Native use to allow JavaScript to be executed on iOS and Android natively?](#what-does-react-native-use-to-allow-javascript-to-be-executed-on-ios-and-android-natively)
+- [35 Does React Native use a WebView?](#does-react-native-use-a-webview)
 <br/><br/><br/><br/>
 
 1. ### What is a Hybrid App?
@@ -269,24 +273,110 @@ const App = () => {
 }
 ```
 
-26. ### When to Consider Building a Cross-platform App?
+26. ### What are Touchable components in react Native?
+
+Touchable components are the most basic building blocks of React Native apps. They allow you to make views respond properly to touches. When you wrap a view with a Touchable component, you make it respond to touch events such as the press. Touchable components provide a simple interface for creating components that respond to user interactions.
+
+```jsx
+import React from 'react'
+import { TouchableOpacity, Text } from 'react-native'
+
+const App = () => {
+	return (
+		<TouchableOpacity
+			onPress={() => console.log('Pressed')}
+			style={{ backgroundColor: 'blue' }}>
+			<Text style={{ fontSize: 20, color: 'white' }}>Press Me</Text>
+		</TouchableOpacity>
+	)
+}
+```
+
+27. ### What are the Different Ways to style React Native Application?
+
+There are two ways to style React Native application: StyleSheet and inline styles.
+
+## StyleSheet
+
+```jsx
+import { StyleSheet } from 'react-native'
+
+import React from 'react'
+
+import { View, Text, StyleSheet } from 'react-native'
+
+const App = () => {
+	return (
+		<View style={styles.container}>
+			<Text
+				style={{
+					fontSize: 20,
+				}}>
+				Hello World
+			</Text>
+		</View>
+	)
+}
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: '#fff',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+})
+```
+
+## Inline Styles
+
+```jsx
+import React from 'react'
+
+import { View, Text, StyleSheet } from 'react-native'
+
+const App = () => {
+	return (
+		<Text
+			style={{
+				fontSize: 20,
+			}}>
+			Hello World
+		</Text>
+	)
+}
+```
+
+28. ### What are the disadvantages of React Native?
+
+React Native is a great framework for building cross-platform mobile applications. However, it has some disadvantages too.
+
+- React Native is not a native app. It is a hybrid app. It is a web app that is wrapped in a native app. So, it is not as fast as a native app.
+- It takes more time to boot up than a native app.
+- Security is a concern. React Native apps are not as secure as native apps. When we choose banking apps, Expert not choose React Native apps.
+
+29. ### what is deep linking in react native
+
+Deep linking consists of using a uniform resource identifier (URI) that links to a specific location within a mobile app rather than simply launching the app.
+
+30. ### When to Consider Building a Cross-platform App?
 
 - We have to release a mobile app for both Android and iOS in limited time ,resources and budget.
 - Need to target both Android and iOS platforms.
 - Need faster development.
 - The app isn’t complex and doesn’t need functionalities which vary much between the platforms.
 
-27. ### What is React Native and why it is used?
+31. ### What is React Native and why it is used?
 
 React Native is an open-source JavaScript framework, designed for building apps on multiple platforms like iOS, Android, and also web applications, utilizing the very same code base. It is based on React, and it brings all its glory to mobile app development.
 
-28. ### How react native works internally
+32. ### How react native works internally
 
 React Native allows developers to build apps by spinning up JS threads that interpret JavaScript code, by making a native bridge between the app and the target platform. The bridge concept leverages the library and transfers the component’s hierarchy to the mobile devices view.
 
 For instance, if the user presses a button, this case is translated into an event that JavaScript can handle. After that, by relaying messages between native platforms and JS code, the React Native bridges translates native events into something that React components can understand and work with.
 
-29. ### What is React Native Threading Model ?
+33. ### What is React Native Threading Model ?
 
 There are 3 main threads in React Native:
 
@@ -303,11 +393,11 @@ The Javascript Queue is the thread queue where the main bundled JS thread runs. 
 **Native Modules Thread**
 If an app needs access to platform API, this is where the magic happens.
 
-30. ### What does React Native use to allow JavaScript to be executed on iOS and Android natively?
+34. ### What does React Native use to allow JavaScript to be executed on iOS and Android natively?
 
 On iOS simulators and devices, Android emulators and devices React Native uses JavaScriptCore which is the JavaScript engine that powers Safari. Our bundle contains the JS code. And it runs on the JavaScriptCore engine. And communicates with the native code through a bridge.
 
-31. ### Does React Native use a WebView?
+35. ### Does React Native use a WebView?
 
 React Native uses a JavaScript runtime, but the UI is not HTML and it doesn't use a WebView. We use JSX and React Native-specific components to define the UI. It provides a native-level performance and looks and feels but some UI parts have to be configured separately for iOS and Android.
 
