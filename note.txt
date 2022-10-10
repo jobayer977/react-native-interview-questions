@@ -1,1 +1,1 @@
-https://reactnative.dev/docs/native-modules-intro
+https://reactnavigation.org/docs/hello-react-navigation
